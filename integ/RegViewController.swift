@@ -19,11 +19,17 @@ class RegViewController: UIViewController {
 
         
     }
-    @IBAction func TapButton() {
-        guard
-            let username = usernameTextField.text
-            let password = passwordTextField.text
-        	
+
+    @IBAction func btn_login(_ sender: Any) {
+        let nombretxt = usernameTextField.text!
+        let passwordtxt = passwordTextField.text!
+        
+        if(nombretxt.count > 0 && passwordtxt.count > 0){
+            
+            Alamofire.request("http://34.207.94.77:3333/login",method: .post).response { response in
+               
+            }
+        }
     }
     
 }

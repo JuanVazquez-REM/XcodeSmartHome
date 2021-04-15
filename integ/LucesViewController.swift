@@ -18,6 +18,9 @@ class LucesViewController: UIViewController {
                     view.LaddBackground(imageName: "Luces.png", contentMode: .scaleAspectFit)
                     
                 }
+    
+    
+    
                 
             }
     extension UIView {

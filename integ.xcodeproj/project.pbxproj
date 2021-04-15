@@ -29,6 +29,9 @@
 		C8EC212125DD829F000018FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8EC211F25DD829F000018FB /* LaunchScreen.storyboard */; };
 		C8EC212C25DD829F000018FB /* integTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EC212B25DD829F000018FB /* integTests.swift */; };
 		C8EC213725DD829F000018FB /* integUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EC213625DD829F000018FB /* integUITests.swift */; };
+		D83DB12E26261A57005426F5 /* Foco.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83DB12D26261A57005426F5 /* Foco.swift */; };
+		D83DB13026261A9A005426F5 /* FocosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83DB12F26261A9A005426F5 /* FocosCollectionViewController.swift */; };
+		D8607F1E2628C95C0085146C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8607F1D2628C95C0085146C /* User.swift */; };
 		E85F74B5260A77B1009CDCE0 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85F74B4260A77B0009CDCE0 /* SideMenu.swift */; };
 		E85F74CC260A84BC009CDCE0 /* RegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85F74CB260A84BC009CDCE0 /* RegViewController.swift */; };
 /* End PBXBuildFile section */
@@ -81,6 +84,9 @@
 		C8EC213225DD829F000018FB /* integUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = integUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8EC213625DD829F000018FB /* integUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = integUITests.swift; sourceTree = "<group>"; };
 		C8EC213825DD829F000018FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D83DB12D26261A57005426F5 /* Foco.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foco.swift; sourceTree = "<group>"; };
+		D83DB12F26261A9A005426F5 /* FocosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocosCollectionViewController.swift; sourceTree = "<group>"; };
+		D8607F1D2628C95C0085146C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E85F74B4260A77B0009CDCE0 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		E85F74CB260A84BC009CDCE0 /* RegViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -183,6 +189,9 @@
 				84ACDB6C260CFA8F00ED5DF1 /* CocheraViewController.swift */,
 				84ACDB6E260CFAA700ED5DF1 /* TempViewController.swift */,
 				84A2AA23260E7AA2008104B5 /* HumedadViewController.swift */,
+				D83DB12D26261A57005426F5 /* Foco.swift */,
+				D83DB12F26261A9A005426F5 /* FocosCollectionViewController.swift */,
+				D8607F1D2628C95C0085146C /* User.swift */,
 			);
 			path = integ;
 			sourceTree = "<group>";
@@ -390,11 +399,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				84A2AA24260E7AA2008104B5 /* HumedadViewController.swift in Sources */,
+				D83DB12E26261A57005426F5 /* Foco.swift in Sources */,
 				84ACDB6F260CFAA700ED5DF1 /* TempViewController.swift in Sources */,
 				C8EC211925DD828C000018FB /* ViewController.swift in Sources */,
+				D83DB13026261A9A005426F5 /* FocosCollectionViewController.swift in Sources */,
 				84B90423260CF4B400E13550 /* LucesViewController.swift in Sources */,
 				84ACDB6D260CFA8F00ED5DF1 /* CocheraViewController.swift in Sources */,
 				C8EC211525DD828C000018FB /* AppDelegate.swift in Sources */,
+				D8607F1E2628C95C0085146C /* User.swift in Sources */,
 				E85F74CC260A84BC009CDCE0 /* RegViewController.swift in Sources */,
 				E85F74B5260A77B1009CDCE0 /* SideMenu.swift in Sources */,
 				C8EC211725DD828C000018FB /* SceneDelegate.swift in Sources */,
