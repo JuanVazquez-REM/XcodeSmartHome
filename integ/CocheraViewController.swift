@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class CocheraViewController: UIViewController {
    
@@ -16,10 +17,24 @@ class CocheraViewController: UIViewController {
         view.privateaddBackground(imageName: "coche.jpeg")
         view.privateaddBackground(contentMode: .scaleAspectFit)
         view.privateaddBackground(imageName: "coche.jpeg", contentMode: .scaleAspectFit)
+   
+        /* AF.request("http://3.95.199.7:3333/show/last")
+                .response {(response) in
+                    debugPrint(response)
+            }
+            
+            let header : HTTPHeaders = [
+            .accept("")
+            ]
+            AF.request("http://3.95.199.7:3333/show/last" , headers: header)
+                .responseJSON { (response) in
+                    print(response)
+                    
+            }*/
+                }
         
-    }
-    
-}
+                
+            }
 extension UIView {
     func privateaddBackground(imageName: String = "coche.jpeg", contentMode: UIView.ContentMode = .scaleToFill) {
         // setup the UIImageView

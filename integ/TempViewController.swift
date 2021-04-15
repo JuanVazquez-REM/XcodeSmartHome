@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class TempViewController: UIViewController {
 
@@ -17,7 +18,21 @@ class TempViewController: UIViewController {
                 view.addBackground(contentMode: .scaleAspectFit)
                 view.addBackground(imageName: "cieloo.jpeg", contentMode: .scaleAspectFit)
                 
+        AF.request("http://3.95.199.7:3333/show/last")
+            .response {(response) in
+                debugPrint(response)
+        }
+        
+        let header : HTTPHeaders = [
+        .accept("")
+        ]
+        AF.request("http://3.95.199.7:3333/show/last" , headers: header)
+            .responseJSON { (response) in
+                print(response)
+                
+        }
             }
+    
             
         }
 extension UIView {

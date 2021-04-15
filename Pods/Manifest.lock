@@ -1,16 +1,24 @@
 PODS:
+  - Alamofire (5.4.2)
+  - NavigationDrawer (1.0.3)
   - SideMenu (6.5.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.0)
+  - NavigationDrawer
   - SideMenu
 
 SPEC REPOS:
   trunk:
+    - Alamofire
+    - NavigationDrawer
     - SideMenu
 
 SPEC CHECKSUMS:
+  Alamofire: bfbc4c2fe5909b1d94fb4ef2277c6b3727ef5dae
+  NavigationDrawer: ad87622628ed59589f8fe8e2338d27109ca51a64
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
 
-PODFILE CHECKSUM: b9c9f2c4db4fa3eb6b70d27094523ef63a29b3a3
+PODFILE CHECKSUM: 8060f539b2943cadc77fe25c2de97a92cfcb4d00
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.1
