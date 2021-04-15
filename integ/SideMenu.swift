@@ -8,7 +8,7 @@
 import SideMenu
 import UIKit
 import Foundation
-
+import Alamofire
 
 class SideMenu: UIViewController {
 
@@ -25,6 +25,23 @@ class SideMenu: UIViewController {
         SideMenuManager.default.leftMenuNavigationController = menu
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
         
+/*        AF.request("http://3.95.199.7:3333/show/last")
+                .response {(response) in
+                    debugPrint(response)
+            }
+            
+            let header : HTTPHeaders = [
+            .accept("")
+            ]
+            AF.request("http://3.95.199.7:3333/show/last" , headers: header)
+                .responseJSON { (response) in
+                    print(response)
+                    
+            }
+                }
+        
+                
+            }*/
     }
     @IBAction func MenuButon() {
     present(menu!, animated: true)

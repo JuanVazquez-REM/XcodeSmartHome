@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class RegViewController: UIViewController {
 
@@ -16,14 +17,27 @@ class RegViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        /*        AF.request("http://3.95.199.7:3333/show/last")
+                .response {(response) in
+                    debugPrint(response)
+            }
+            
+            let header : HTTPHeaders = [
+            .accept("")
+            ]
+            AF.request("http://3.95.199.7:3333/show/last" , headers: header)
+                .responseJSON { (response) in
+                    print(response)
+                    
+            }*/
+                }
         
-    }
+                
+            }
+    
     @IBAction func TapButton() {
         guard
             let username = usernameTextField.text
             let password = passwordTextField.text
         	
     }
-    
-}

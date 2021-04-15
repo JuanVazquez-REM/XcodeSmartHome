@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class LucesViewController: UIViewController {
 
@@ -16,10 +17,21 @@ class LucesViewController: UIViewController {
                     view.LaddBackground(imageName: "Luces.png")
                     view.LaddBackground(contentMode: .scaleAspectFit)
                     view.LaddBackground(imageName: "Luces.png", contentMode: .scaleAspectFit)
-                    
-                }
-                
-            }
+               /* AF.request("http://3.95.199.7:3333/show/last")
+                            .response {(response) in
+                                debugPrint(response)
+                        }
+                        
+                        let header : HTTPHeaders = [
+                        .accept("")
+                        ]
+                        AF.request("http://3.95.199.7:3333/show/last" , headers: header)
+                            .responseJSON { (response) in
+                                print(response)
+                                
+                        }*/
+                            }
+                        }
     extension UIView {
         func LaddBackground(imageName: String = "Luces.png", contentMode: UIView.ContentMode = .scaleToFill) {
             // setup the UIImageView
