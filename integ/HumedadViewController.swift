@@ -12,18 +12,18 @@ class HumedadViewController: UIViewController {
     override func viewDidLoad() {
                     
                     view.HaddBackground()
-                    view.HaddBackground(imageName: "Humedad.png")
+                    view.HaddBackground(imageName: "")
                     view.HaddBackground(contentMode: .scaleAspectFit)
-                    view.HaddBackground(imageName: "Humedad.png", contentMode: .scaleAspectFit)
+                    view.HaddBackground(imageName: "", contentMode: .scaleAspectFit)
                     
                 }
                 
             }
     extension UIView {
-        func HaddBackground(imageName: String = "Humedad.png", contentMode: UIView.ContentMode = .scaleToFill) {
+        func HaddBackground(imageName: String = "", contentMode: UIView.ContentMode = .scaleToFill) {
             // setup the UIImageView
             let backgroundImageView = UIImageView(frame: UIScreen.main.bounds)
-            backgroundImageView.image = UIImage(named: "Humedad.png")
+            backgroundImageView.image = UIImage(named: "")
             backgroundImageView.contentMode = contentMode
             backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
 

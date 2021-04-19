@@ -11,8 +11,6 @@
 		2812B9792602915600A8E677 /* cochera.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2812B9782602915600A8E677 /* cochera.jpeg */; };
 		2812B97E2602932500A8E677 /* coche.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2812B97D2602932500A8E677 /* coche.jpeg */; };
 		3609CBDCFF9E8C59175A63E1 /* Pods_integ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C390B43E252808AF176EC005 /* Pods_integ.framework */; };
-		84A2AA21260E79D0008104B5 /* Humedad.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A2AA1F260E79D0008104B5 /* Humedad.png */; };
-		84A2AA22260E79D0008104B5 /* Luces.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A2AA20260E79D0008104B5 /* Luces.png */; };
 		84A2AA24260E7AA2008104B5 /* HumedadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2AA23260E7AA2008104B5 /* HumedadViewController.swift */; };
 		84ACDB6D260CFA8F00ED5DF1 /* CocheraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACDB6C260CFA8F00ED5DF1 /* CocheraViewController.swift */; };
 		84ACDB6F260CFAA700ED5DF1 /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACDB6E260CFAA700ED5DF1 /* TempViewController.swift */; };
@@ -59,8 +57,6 @@
 		2812B97D2602932500A8E677 /* coche.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coche.jpeg; sourceTree = "<group>"; };
 		5B25138926180FB8108A28CE /* Pods-integ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-integ.release.xcconfig"; path = "Target Support Files/Pods-integ/Pods-integ.release.xcconfig"; sourceTree = "<group>"; };
 		6DA7F80A720208AE68BA13FB /* Pods-integ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-integ.debug.xcconfig"; path = "Target Support Files/Pods-integ/Pods-integ.debug.xcconfig"; sourceTree = "<group>"; };
-		84A2AA1F260E79D0008104B5 /* Humedad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Humedad.png; path = ../../../../../Volumes/MULTIBOOT/Humedad.png; sourceTree = "<group>"; };
-		84A2AA20260E79D0008104B5 /* Luces.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Luces.png; path = ../../../../../Volumes/MULTIBOOT/Luces.png; sourceTree = "<group>"; };
 		84A2AA23260E7AA2008104B5 /* HumedadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumedadViewController.swift; sourceTree = "<group>"; };
 		84ACDB6C260CFA8F00ED5DF1 /* CocheraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocheraViewController.swift; sourceTree = "<group>"; };
 		84ACDB6E260CFAA700ED5DF1 /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
@@ -137,8 +133,6 @@
 		C82030E325E4234D006729DC /* imagenes */ = {
 			isa = PBXGroup;
 			children = (
-				84A2AA1F260E79D0008104B5 /* Humedad.png */,
-				84A2AA20260E79D0008104B5 /* Luces.png */,
 				2812B97D2602932500A8E677 /* coche.jpeg */,
 				2812B97026028B2B00A8E677 /* cieloo.jpeg */,
 				C82030E425E4234D006729DC /* icono.png */,
@@ -279,7 +273,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = mac02;
 				TargetAttributes = {
 					C8EC211025DD828C000018FB = {
@@ -328,8 +322,6 @@
 				C8EC211E25DD829F000018FB /* Assets.xcassets in Resources */,
 				C8EC211C25DD828C000018FB /* Main.storyboard in Resources */,
 				2812B97126028B2B00A8E677 /* cieloo.jpeg in Resources */,
-				84A2AA22260E79D0008104B5 /* Luces.png in Resources */,
-				84A2AA21260E79D0008104B5 /* Humedad.png in Resources */,
 				C82030EA25E4234E006729DC /* SmartHome (2).jpg in Resources */,
 				2812B9792602915600A8E677 /* cochera.jpeg in Resources */,
 			);
@@ -490,6 +482,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -550,6 +543,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

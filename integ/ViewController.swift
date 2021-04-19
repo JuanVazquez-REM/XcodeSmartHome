@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(ImageView)
+        self.performSegue(withIdentifier: "splash", sender: nil)
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

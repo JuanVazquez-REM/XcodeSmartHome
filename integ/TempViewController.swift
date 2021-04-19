@@ -7,44 +7,26 @@
 //
 
 import UIKit
-import Alamofire
+
 
 class TempViewController: UIViewController {
 
     override func viewDidLoad() {
                 
-                view.addBackground()
-                view.addBackground(imageName: "cieloo.jpeg")
-                view.addBackground(contentMode: .scaleAspectFit)
-                view.addBackground(imageName: "cieloo.jpeg", contentMode: .scaleAspectFit)
-                
-        AF.request("http://3.95.199.7:3333/show/last")
-            .response {(response) in
-                debugPrint(response)
-        }
-        
-        let header : HTTPHeaders = [
-        .accept("")
-        ]
-        AF.request("http://3.95.199.7:3333/show/last" , headers: header)
-            .responseJSON { (response) in
-                print(response)
-                
-        }
-            }
-    
-            
-        }
-extension UIView {
-    func addBackground(imageName: String = "cieloo.jpeg", contentMode: UIView.ContentMode = .scaleToFill) {
+                //view.addBackground()
+                //view.addBackground(imageName: "cieloo.jpeg")
+                //view.addBackground(contentMode: .scaleAspectFit)
+                //view.addBackground(imageName: "cieloo.jpeg", contentMode: .scaleAspectFit)
+    }
+     func addBackground(imageName: String = "cieloo.jpeg", contentMode: UIView.ContentMode = .scaleToFill) {
         // setup the UIImageView
         let backgroundImageView = UIImageView(frame: UIScreen.main.bounds)
         backgroundImageView.image = UIImage(named: "cieloo.jpeg")
         backgroundImageView.contentMode = contentMode
         backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
 
-        addSubview(backgroundImageView)
-        sendSubviewToBack(backgroundImageView)
+        //addSubview(backgroundImageView)
+        //sendSubviewToBack(backgroundImageView)
 
         // adding NSLayoutConstraints
         let leadingConstraint = NSLayoutConstraint(item: backgroundImageView, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 0.0)
@@ -55,13 +37,6 @@ extension UIView {
         NSLayoutConstraint.activate([leadingConstraint, trailingConstraint, topConstraint, bottomConstraint])
     }
 }
-   
-            
-
-       
-    
-    
-
     /*
     // MARK: - Navigation
 
@@ -71,5 +46,7 @@ extension UIView {
         // Pass the selected object to the new view controller.
     }
     */
+
+
 
 

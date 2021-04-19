@@ -5,25 +5,25 @@
 //  Created by Mac04 on 23/03/21.
 //  Copyright © 2021 mac02. All rights reserved.
 //
-import SideMenu
+
 import UIKit
 import Foundation
-import Alamofire
+
 
 class SideMenu: UIViewController {
 
-    var menu: SideMenuNavigationController?
+    //var menu: SideMenuNavigationController?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        menu = SideMenuNavigationController(rootViewController: MenuListController())
-        menu?.leftSide = true
-        menu?.setNavigationBarHidden(true, animated: false)
+        //menu = SideMenuNavigationController(rootViewController: MenuListController())
+        //menu?.leftSide = true
+        //menu?.setNavigationBarHidden(true, animated: false)
         
-        SideMenuManager.default.leftMenuNavigationController = menu
-        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
+        //SideMenuManager.default.leftMenuNavigationController = menu
+        //SideMenuManager.default.addPanGestureToPresent(toView: self.view)
         
 /*        AF.request("http://3.95.199.7:3333/show/last")
                 .response {(response) in
@@ -44,7 +44,7 @@ class SideMenu: UIViewController {
             }*/
     }
     @IBAction func MenuButon() {
-    present(menu!, animated: true)
+    //present(menu!, animated: true)
     }
     
 
