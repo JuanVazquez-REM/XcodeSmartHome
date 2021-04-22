@@ -12,7 +12,7 @@ import Foundation
 
 class SideMenu: UIViewController {
 
-    //var menu: SideMenuNavigationController?
+   // var menu: SideMenuNavigationController?
     
     
     override func viewDidLoad() {
@@ -20,41 +20,20 @@ class SideMenu: UIViewController {
        
         //menu = SideMenuNavigationController(rootViewController: MenuListController())
         //menu?.leftSide = true
-        //menu?.setNavigationBarHidden(true, animated: false)
+       // menu?.setNavigationBarHidden(true, animated: false)
         
         //SideMenuManager.default.leftMenuNavigationController = menu
         //SideMenuManager.default.addPanGestureToPresent(toView: self.view)
         
-/*        AF.request("http://3.95.199.7:3333/show/last")
-                .response {(response) in
-                    debugPrint(response)
-            }
-            
-            let header : HTTPHeaders = [
-            .accept("")
-            ]
-            AF.request("http://3.95.199.7:3333/show/last" , headers: header)
-                .responseJSON { (response) in
-                    print(response)
-                    
-            }
-                }
-        
-                
-            }*/
     }
     @IBAction func MenuButon() {
     //present(menu!, animated: true)
     }
-    
-
 }
 class MenuListController: UITableViewController {
     var items = [String]()
     var image = ["cloud.sun.rain.fill", "car.fill", "lightbulb.fill", "gear","","","","","","","","","","","","","","","person.crop.circle.fill.badge.xmark" ]
     var posicion = 0
-    
-    
     
     
     let darkColor = UIColor(red: 33/27.0, green: 33/51.0, blue: 33/120.0, alpha: 1)
@@ -107,10 +86,6 @@ class MenuListController: UITableViewController {
          }
 
     }
-    
-    
-   
-        
 }
     
 

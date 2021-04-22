@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct User: Codable {
+class User: Codable {
     var user_id: Int?
     var nombre: Int?
     var apellido: Int?

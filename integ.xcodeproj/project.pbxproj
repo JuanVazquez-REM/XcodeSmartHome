@@ -11,6 +11,7 @@
 		2812B9792602915600A8E677 /* cochera.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2812B9782602915600A8E677 /* cochera.jpeg */; };
 		2812B97E2602932500A8E677 /* coche.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2812B97D2602932500A8E677 /* coche.jpeg */; };
 		3609CBDCFF9E8C59175A63E1 /* Pods_integ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C390B43E252808AF176EC005 /* Pods_integ.framework */; };
+		6AE9E72226312C460057F16E /* NewUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE9E72126312C460057F16E /* NewUserController.swift */; };
 		84A2AA24260E7AA2008104B5 /* HumedadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2AA23260E7AA2008104B5 /* HumedadViewController.swift */; };
 		84ACDB6D260CFA8F00ED5DF1 /* CocheraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACDB6C260CFA8F00ED5DF1 /* CocheraViewController.swift */; };
 		84ACDB6F260CFAA700ED5DF1 /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACDB6E260CFAA700ED5DF1 /* TempViewController.swift */; };
@@ -29,7 +30,6 @@
 		C8EC213725DD829F000018FB /* integUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EC213625DD829F000018FB /* integUITests.swift */; };
 		D83DB12E26261A57005426F5 /* Foco.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83DB12D26261A57005426F5 /* Foco.swift */; };
 		D83DB13026261A9A005426F5 /* FocosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83DB12F26261A9A005426F5 /* FocosCollectionViewController.swift */; };
-		D8607F1E2628C95C0085146C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8607F1D2628C95C0085146C /* User.swift */; };
 		E85F74B5260A77B1009CDCE0 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85F74B4260A77B0009CDCE0 /* SideMenu.swift */; };
 		E85F74CC260A84BC009CDCE0 /* RegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85F74CB260A84BC009CDCE0 /* RegViewController.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +56,7 @@
 		2812B9782602915600A8E677 /* cochera.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cochera.jpeg; sourceTree = "<group>"; };
 		2812B97D2602932500A8E677 /* coche.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coche.jpeg; sourceTree = "<group>"; };
 		5B25138926180FB8108A28CE /* Pods-integ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-integ.release.xcconfig"; path = "Target Support Files/Pods-integ/Pods-integ.release.xcconfig"; sourceTree = "<group>"; };
+		6AE9E72126312C460057F16E /* NewUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserController.swift; sourceTree = "<group>"; };
 		6DA7F80A720208AE68BA13FB /* Pods-integ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-integ.debug.xcconfig"; path = "Target Support Files/Pods-integ/Pods-integ.debug.xcconfig"; sourceTree = "<group>"; };
 		84A2AA23260E7AA2008104B5 /* HumedadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumedadViewController.swift; sourceTree = "<group>"; };
 		84ACDB6C260CFA8F00ED5DF1 /* CocheraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocheraViewController.swift; sourceTree = "<group>"; };
@@ -82,7 +83,6 @@
 		C8EC213825DD829F000018FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D83DB12D26261A57005426F5 /* Foco.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foco.swift; sourceTree = "<group>"; };
 		D83DB12F26261A9A005426F5 /* FocosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocosCollectionViewController.swift; sourceTree = "<group>"; };
-		D8607F1D2628C95C0085146C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E85F74B4260A77B0009CDCE0 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		E85F74CB260A84BC009CDCE0 /* RegViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,6 +174,7 @@
 				C8EC211625DD828C000018FB /* SceneDelegate.swift */,
 				C8EC211825DD828C000018FB /* ViewController.swift */,
 				C8EC211A25DD828C000018FB /* Main.storyboard */,
+				6AE9E72126312C460057F16E /* NewUserController.swift */,
 				C8EC211D25DD829F000018FB /* Assets.xcassets */,
 				C8EC211F25DD829F000018FB /* LaunchScreen.storyboard */,
 				C8EC212225DD829F000018FB /* Info.plist */,
@@ -185,7 +186,6 @@
 				84A2AA23260E7AA2008104B5 /* HumedadViewController.swift */,
 				D83DB12D26261A57005426F5 /* Foco.swift */,
 				D83DB12F26261A9A005426F5 /* FocosCollectionViewController.swift */,
-				D8607F1D2628C95C0085146C /* User.swift */,
 			);
 			path = integ;
 			sourceTree = "<group>";
@@ -398,10 +398,10 @@
 				84B90423260CF4B400E13550 /* LucesViewController.swift in Sources */,
 				84ACDB6D260CFA8F00ED5DF1 /* CocheraViewController.swift in Sources */,
 				C8EC211525DD828C000018FB /* AppDelegate.swift in Sources */,
-				D8607F1E2628C95C0085146C /* User.swift in Sources */,
 				E85F74CC260A84BC009CDCE0 /* RegViewController.swift in Sources */,
 				E85F74B5260A77B1009CDCE0 /* SideMenu.swift in Sources */,
 				C8EC211725DD828C000018FB /* SceneDelegate.swift in Sources */,
+				6AE9E72226312C460057F16E /* NewUserController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
