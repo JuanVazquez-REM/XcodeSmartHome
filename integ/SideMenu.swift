@@ -8,26 +8,27 @@
 
 import UIKit
 import Foundation
+import SideMenu
 
 
 class SideMenu: UIViewController {
 
-   // var menu: SideMenuNavigationController?
+   var menu: SideMenuNavigationController?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        //menu = SideMenuNavigationController(rootViewController: MenuListController())
-        //menu?.leftSide = true
-       // menu?.setNavigationBarHidden(true, animated: false)
+        menu = SideMenuNavigationController(rootViewController: MenuListController())
+        menu?.leftSide = true
+       menu?.setNavigationBarHidden(true, animated: false)
         
-        //SideMenuManager.default.leftMenuNavigationController = menu
-        //SideMenuManager.default.addPanGestureToPresent(toView: self.view)
+        SideMenuManager.default.leftMenuNavigationController = menu
+        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
         
     }
     @IBAction func MenuButon() {
-    //present(menu!, animated: true)
+    present(menu!, animated: true)
     }
 }
 class MenuListController: UITableViewController {

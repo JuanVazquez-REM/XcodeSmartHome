@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Alamofire
 
 class RegViewController: UIViewController {
 
@@ -26,15 +26,22 @@ class RegViewController: UIViewController {
         performSegue(withIdentifier: "reg", sender: nil)
     }
     @IBAction func btn_login(_ sender: Any) {
-        let nombretxt = usernameTextField.text!
-        let passwordtxt = passwordTextField.text!
-
-
-        if(nombretxt.count > 0 && passwordtxt.count > 0){
-                    
+        if usernameTextField.text!.isEmpty || passwordTextField.text!.isEmpty{
+            alertDefault(with: "Error", andWithMsg: "Campos vacios")
+            usernameTextField.shake()
+            passwordTextField.shake()
+            }else{
+                self.performSegue(withIdentifier: "sg", sender: nil)
+                /*AF.request("",
+                    method: .post,
+                    parameters: ["email":"User.email"],
+                    encoding: JSONEncoding.default)*/
+                AF.request("http://54.146.120.131:3333/login", method: .post, parameters: ["email":User.).response { response in debugPrint(response)
+            }
         }
     }
-}
+
     /*func registro(){
-        AF.request("url",method: .post,parameters:["clave":"valor"], headers: <#T##HTTPHeaders?#> , encoding: <#T##ParameterEncoding#>)
+        AF.request("url",method: .post,parameters:["clave":"valor"], encoding: JSONEncoding.default)
     }*/
+}
