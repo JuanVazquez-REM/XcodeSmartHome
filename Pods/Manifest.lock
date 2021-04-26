@@ -2,23 +2,31 @@ PODS:
   - Alamofire (5.4.2)
   - NavigationDrawer (1.0.3)
   - SideMenu (6.5.0)
+  - Socket.IO-Client-Swift (16.0.1):
+    - Starscream (~> 4.0)
+  - Starscream (4.0.4)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0)
   - NavigationDrawer
   - SideMenu
+  - Socket.IO-Client-Swift
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - NavigationDrawer
     - SideMenu
+    - Socket.IO-Client-Swift
+    - Starscream
 
 SPEC CHECKSUMS:
   Alamofire: bfbc4c2fe5909b1d94fb4ef2277c6b3727ef5dae
   NavigationDrawer: ad87622628ed59589f8fe8e2338d27109ca51a64
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
+  Socket.IO-Client-Swift: c116d6dc9fd6be9c259bacfe143f8725bce7d79e
+  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
 
-PODFILE CHECKSUM: 8060f539b2943cadc77fe25c2de97a92cfcb4d00
+PODFILE CHECKSUM: b4d683ab266a260c63ad4963dfc765d1f1bbb561
 
 COCOAPODS: 1.10.1
