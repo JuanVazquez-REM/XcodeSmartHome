@@ -6,14 +6,19 @@
 //  Copyright © 2021 mac02. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class User: NSObject, Codable {
-        var username: String!
-            
-        init(_ username:String, _ highscore:Int) {
-            self.username = username
-
+struct User: Codable {
+        var name: String!
+        var correo: String!
+        var contra: String!
+    init(_ name:String, correo:String, _ contra:String) {
+        self.name = name
+        self.correo = correo
+        self.contra = contra
         }
-     
+        
+        func updateToken(){
+            print("Actualizando token")
+        }
 }

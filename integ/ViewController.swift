@@ -35,8 +35,6 @@ class ViewController: UIViewController {
         viewController.modalTransitionStyle = .crossDissolve
         viewController.modalPresentationStyle = .fullScreen
         performSegue(withIdentifier: "splash", sender: nil)
-       
-        
         
     }
 }

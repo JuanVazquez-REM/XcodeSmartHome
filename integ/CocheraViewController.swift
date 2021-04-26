@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Alamofire
 class CocheraViewController: UIViewController {
    
     override func viewDidLoad() {
@@ -15,25 +15,16 @@ class CocheraViewController: UIViewController {
         view.privateaddBackground()
         view.privateaddBackground(imageName: "coche.jpeg")
         view.privateaddBackground(contentMode: .scaleAspectFit)
-        view.privateaddBackground(imageName: "coche.jpeg", contentMode: .scaleAspectFit)
-   
-        /* AF.request("http://3.95.199.7:3333/show/last")
-                .response {(response) in
-                    debugPrint(response)
-            }
-            
-            let header : HTTPHeaders = [
-            .accept("")
-            ]
-            AF.request("http://3.95.199.7:3333/show/last" , headers: header)
-                .responseJSON { (response) in
-                    print(response)
-                    
-            }*/
-                }
+        view.privateaddBackground(imageName: "coche.jpeg", contentMode: .scaleAspectFit)}
         
                 
-            }
+    @IBAction func btnOpen(_ sender: Any) {
+        /*AF.request("http://54.146.120.131:3333/", method: .post, parameters: ["":]).response { response in debugPrint(response)*/
+    }
+    @IBAction func btnClose(_ sender: Any) {
+    }
+}
+
 extension UIView {
     func privateaddBackground(imageName: String = "coche.jpeg", contentMode: UIView.ContentMode = .scaleToFill) {
         // setup the UIImageView
@@ -53,17 +44,6 @@ extension UIView {
 
         NSLayoutConstraint.activate([leadingConstraint, trailingConstraint, topConstraint, bottomConstraint])
     }
-}
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-
+    
+}

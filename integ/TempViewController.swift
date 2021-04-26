@@ -7,28 +7,23 @@
 //
 
 import UIKit
-
+import Alamofire
 
 class TempViewController: UIViewController {
 
+    //private let Data = "data"
+    private var Temperatura = ""
     override func viewDidLoad() {
-                
-                //view.addBackground()
-                //view.addBackground(imageName: "cieloo.jpeg")
-                //view.addBackground(contentMode: .scaleAspectFit)
-                //view.addBackground(imageName: "cieloo.jpeg", contentMode: .scaleAspectFit)
+
     }
-     func addBackground(imageName: String = "cieloo.jpeg", contentMode: UIView.ContentMode = .scaleToFill) {
+    func addBackground(imageName: String = "cieloo.jpeg", contentMode: UIView.ContentMode = .scaleToFill) {
         // setup the UIImageView
         let backgroundImageView = UIImageView(frame: UIScreen.main.bounds)
         backgroundImageView.image = UIImage(named: "cieloo.jpeg")
         backgroundImageView.contentMode = contentMode
         backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
 
-        //addSubview(backgroundImageView)
-        //sendSubviewToBack(backgroundImageView)
 
-        // adding NSLayoutConstraints
         let leadingConstraint = NSLayoutConstraint(item: backgroundImageView, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 0.0)
         let trailingConstraint = NSLayoutConstraint(item: backgroundImageView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: 0.0)
         let topConstraint = NSLayoutConstraint(item: backgroundImageView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0.0)
@@ -36,16 +31,22 @@ class TempViewController: UIViewController {
 
         NSLayoutConstraint.activate([leadingConstraint, trailingConstraint, topConstraint, bottomConstraint])
     }
-}
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBOutlet weak var DATA: UITableView!
+    @IBAction func btnGet(_ sender: Any) {
+        var data = [String]()
+        data.append(contentsOf: [])
+        AF.request("http://54.146.120.131:3333/data/device", method: .post, parameters: ["tipo":Temperatura]).response { response in debugPrint(response)
+       
     }
-    */
+        
+    }
+    private func ShowAlert(message: String){
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+}
+
 
 
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewUserController: UIViewController {
+class NewUserController: UIViewController, UITextFieldDelegate {
 
 
     @IBOutlet weak var nameTextField: UITextField!
@@ -19,35 +19,38 @@ class NewUserController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
+    
+    let defaults = UserDefaults.standard
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
 
-    @IBAction func reg(_ sender: Any) {
-        //alertDefault(with: "Error2", andWithMsg: "Campos vacios")
-        //performSegue(withIdentifier: "reg1", sender: nil)
-    }
-    
     @IBAction func registro(_ sender: Any) {
-        
-        if !nameTextField.text!.isEmpty && apeidoTextField.text!.isEmpty{
-            if !correoTextField.text!.isEmpty && passwordTextField.text!.isEmpty{
-                self.performSegue(withIdentifier: "reg1", sender: nil)            }else{
+        let userTxt = nameTextField.text!
+        if (userTxt.count > 0 && correoTextField.text?.count ?? 0 > 0 && passwordTextField.text?.count ?? 0 > 0){
+                let user = User(userTxt, correo:correoTextField.text!, passwordTextField.text!)
+                let usuarios:[User] = [user]
+                
+                do{
+                    let jsonEncoder = JSONEncoder()
+                    let data = try jsonEncoder.encode(usuarios)
+                    
+                    defaults.set(data,forKey: "usuarios")
+                    defaults.synchronize()
+                    print("usuario registrado")
+                    
+                }catch{
+                    print("Error")
+                }
+                     }else{
                     alertDefault(with: "Error", andWithMsg: "Campos vacios")
                     nameTextField.shake()
                     passwordTextField.shake()
                     correoTextField.shake()
-                    passwordTextField.shake()            }
-        }else{
-            alertDefault(with: "Error", andWithMsg: "Campos vacios")
-            nameTextField.shake()
-            passwordTextField.shake()
-            correoTextField.shake()
-            passwordTextField.shake()
+                    passwordTextField.shake()
+                }
+            }
         }
-        }
-}
-

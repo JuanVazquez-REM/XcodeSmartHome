@@ -10,8 +10,7 @@ import Foundation
 
 class App: NSObject {
     
-    static let shared = App()
+    static var shared = App()
     let defaults = UserDefaults.standard
-    var users = [User]()
-
+    var tokenSaved:String = ""
 }
