@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct temp {
-    var ID: String!
-    var Temp: String!
-    init(_ ID:String,_ Temp:String) {
-        self.ID = ID
-        self.Temp = Temp
+struct temp:Codable {
+    var tipo: String!
+    var Temperatura: String!
+    init(_ tipo:String,_ Temperatura:String) {
+        self.tipo = tipo
+        self.Temperatura  = Temperatura
     }
 }
 struct cochera {

@@ -1,17 +1,15 @@
 //
-//  TempViewController.swift
+//  FocosViewController.swift
 //  integ
 //
-//  Created by Diseno on 25/03/21.
+//  Created by Carlos Rodriguez on 26/04/21.
 //  Copyright © 2021 mac02. All rights reserved.
 //
 
 import UIKit
 import Alamofire
-import SwiftUI
 import Starscream
-
-class TempViewController: UIViewController,WebSocketDelegate {
+class FocosViewController: UIViewController, WebSocketDelegate {
 
     let defaults = UserDefaults.standard
     var socket: WebSocket!
@@ -62,12 +60,9 @@ class TempViewController: UIViewController,WebSocketDelegate {
             print("websocket en error")
         }
     }
-    @IBOutlet weak var DATA: UITableView!
-    @IBAction func btnGet(_ sender: Any) {
-        socket.connect()
-              
-            AF.request("http://54.146.120.131:3333/data/device", method: .post ).response { response in debugPrint(response)
-            }
+    @IBAction func btnFoco(_ sender: Any) {
+        AF.request("http://54.146.120.131:3333/data/device", method: .get).response { response in debugPrint(response)
+
         }
     }
-
+}

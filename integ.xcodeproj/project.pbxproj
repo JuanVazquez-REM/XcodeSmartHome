@@ -11,6 +11,7 @@
 		2812B9792602915600A8E677 /* cochera.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2812B9782602915600A8E677 /* cochera.jpeg */; };
 		2812B97E2602932500A8E677 /* coche.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2812B97D2602932500A8E677 /* coche.jpeg */; };
 		3609CBDCFF9E8C59175A63E1 /* Pods_integ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C390B43E252808AF176EC005 /* Pods_integ.framework */; };
+		6A35809E2637162600452A73 /* FocosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A35809D2637162600452A73 /* FocosViewController.swift */; };
 		6A4B8CE72631D56400301E2C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4B8CE62631D56400301E2C /* User.swift */; };
 		6A4B8CEC2631D72500301E2C /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4B8CEB2631D72500301E2C /* App.swift */; };
 		6A4B8CF12631DDDD00301E2C /* Extensiones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4B8CF02631DDDD00301E2C /* Extensiones.swift */; };
@@ -37,7 +38,6 @@
 		C8EC212C25DD829F000018FB /* integTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EC212B25DD829F000018FB /* integTests.swift */; };
 		C8EC213725DD829F000018FB /* integUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EC213625DD829F000018FB /* integUITests.swift */; };
 		D83DB12E26261A57005426F5 /* Foco.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83DB12D26261A57005426F5 /* Foco.swift */; };
-		D83DB13026261A9A005426F5 /* FocosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83DB12F26261A9A005426F5 /* FocosCollectionViewController.swift */; };
 		E85F74B5260A77B1009CDCE0 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85F74B4260A77B0009CDCE0 /* SideMenu.swift */; };
 		E85F74CC260A84BC009CDCE0 /* RegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85F74CB260A84BC009CDCE0 /* RegViewController.swift */; };
 /* End PBXBuildFile section */
@@ -64,6 +64,7 @@
 		2812B9782602915600A8E677 /* cochera.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cochera.jpeg; sourceTree = "<group>"; };
 		2812B97D2602932500A8E677 /* coche.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coche.jpeg; sourceTree = "<group>"; };
 		5B25138926180FB8108A28CE /* Pods-integ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-integ.release.xcconfig"; path = "Target Support Files/Pods-integ/Pods-integ.release.xcconfig"; sourceTree = "<group>"; };
+		6A35809D2637162600452A73 /* FocosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocosViewController.swift; sourceTree = "<group>"; };
 		6A4B8CE62631D56400301E2C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6A4B8CEB2631D72500301E2C /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		6A4B8CF02631DDDD00301E2C /* Extensiones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensiones.swift; sourceTree = "<group>"; };
@@ -98,7 +99,6 @@
 		C8EC213625DD829F000018FB /* integUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = integUITests.swift; sourceTree = "<group>"; };
 		C8EC213825DD829F000018FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D83DB12D26261A57005426F5 /* Foco.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foco.swift; sourceTree = "<group>"; };
-		D83DB12F26261A9A005426F5 /* FocosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocosCollectionViewController.swift; sourceTree = "<group>"; };
 		E85F74B4260A77B0009CDCE0 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		E85F74CB260A84BC009CDCE0 /* RegViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -209,7 +209,7 @@
 				6A501C9126369D0C00E46222 /* Temperatura.swift */,
 				84A2AA23260E7AA2008104B5 /* HumedadViewController.swift */,
 				D83DB12D26261A57005426F5 /* Foco.swift */,
-				D83DB12F26261A9A005426F5 /* FocosCollectionViewController.swift */,
+				6A35809D2637162600452A73 /* FocosViewController.swift */,
 			);
 			path = integ;
 			sourceTree = "<group>";
@@ -417,6 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A4B8CE72631D56400301E2C /* User.swift in Sources */,
+				6A35809E2637162600452A73 /* FocosViewController.swift in Sources */,
 				84A2AA24260E7AA2008104B5 /* HumedadViewController.swift in Sources */,
 				6A501C9226369D0C00E46222 /* Temperatura.swift in Sources */,
 				D83DB12E26261A57005426F5 /* Foco.swift in Sources */,
@@ -425,7 +426,6 @@
 				84ACDB6F260CFAA700ED5DF1 /* TempViewController.swift in Sources */,
 				C8EC211925DD828C000018FB /* ViewController.swift in Sources */,
 				6A4B8CEC2631D72500301E2C /* App.swift in Sources */,
-				D83DB13026261A9A005426F5 /* FocosCollectionViewController.swift in Sources */,
 				84B90423260CF4B400E13550 /* LucesViewController.swift in Sources */,
 				84ACDB6D260CFA8F00ED5DF1 /* CocheraViewController.swift in Sources */,
 				C8EC211525DD828C000018FB /* AppDelegate.swift in Sources */,
