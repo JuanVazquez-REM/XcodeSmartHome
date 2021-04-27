@@ -9,14 +9,13 @@
 import UIKit
 import Alamofire
 import Starscream
-class FocosViewController: UIViewController, WebSocketDelegate {
-
-    let defaults = UserDefaults.standard
+class FocosViewController: UIViewController,WebSocketDelegate {
+    
     var socket: WebSocket!
-    var isConnected = false
+    var isConnected = true
     let server = WebSocketServer()
     override func viewDidLoad() {
-        var request = URLRequest(url: URL(string: "http://54.146.120.131:3333/data/device")!)
+        var request = URLRequest(url: URL(string: "ws://54.146.120.131:3333/adonis-ws")!)
         request.timeoutInterval = 5
         socket = WebSocket(request: request)
         socket.delegate = self
@@ -26,6 +25,8 @@ class FocosViewController: UIViewController, WebSocketDelegate {
         switch event {
         case .connected(let headers):
             isConnected = true
+            socket.write(string: "{\"t\":\(1),\"d\":{\"topic\":\"wsfoco\"}}")
+            socket.write(string: "{\"t\":\(3),\"d\":{\"topic\":\"wsfoco\"}}")
             print("websocket is connected: \(headers)")
         case .disconnected(let reason, let code):
             isConnected = false
@@ -58,11 +59,6 @@ class FocosViewController: UIViewController, WebSocketDelegate {
         }
         else{
             print("websocket en error")
-        }
-    }
-    @IBAction func btnFoco(_ sender: Any) {
-        AF.request("http://54.146.120.131:3333/data/device", method: .get).response { response in debugPrint(response)
-
         }
     }
 }

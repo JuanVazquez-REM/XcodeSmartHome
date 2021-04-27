@@ -1,15 +1,15 @@
 //
-//  CocheraViewController.swift
+//  HumoViewController.swift
 //  integ
 //
-//  Created by Diseno on 25/03/21.
+//  Created by Carlos Rodriguez on 27/04/21.
 //  Copyright © 2021 mac02. All rights reserved.
 //
 
 import UIKit
-import Alamofire
 import Starscream
-class CocheraViewController: UIViewController,WebSocketDelegate {
+
+class HumoViewController: UIViewController,WebSocketDelegate {
     
     var socket: WebSocket!
     var isConnected = true
@@ -25,8 +25,8 @@ class CocheraViewController: UIViewController,WebSocketDelegate {
         switch event {
         case .connected(let headers):
             isConnected = true
-            socket.write(string: "{\"t\":\(1),\"d\":{\"topic\":\"wscochera\"}}")
-            socket.write(string: "{\"t\":\(3),\"d\":{\"topic\":\"wscochera\"}}")
+            //socket.write(string: "{\"t\":\(1),\"d\":{\"topic\":\"wstemp\"}}")
+            //socket.write(string: "{\"t\":\(3),\"d\":{\"topic\":\"wstemp\"}}")
             print("websocket is connected: \(headers)")
         case .disconnected(let reason, let code):
             isConnected = false

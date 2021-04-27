@@ -15,6 +15,7 @@
 		6A4B8CE72631D56400301E2C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4B8CE62631D56400301E2C /* User.swift */; };
 		6A4B8CEC2631D72500301E2C /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4B8CEB2631D72500301E2C /* App.swift */; };
 		6A4B8CF12631DDDD00301E2C /* Extensiones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4B8CF02631DDDD00301E2C /* Extensiones.swift */; };
+		6A4BF5692638913800A818C8 /* HumoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4BF5682638913800A818C8 /* HumoViewController.swift */; };
 		6A501C7826366A1C00E46222 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A501C7726366A1C00E46222 /* ScannerViewController.swift */; };
 		6A501C7E2636720800E46222 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A501C7D2636720800E46222 /* Device.swift */; };
 		6A501C8926368D0500E46222 /* humedad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6A501C8726368D0400E46222 /* humedad.jpg */; };
@@ -68,6 +69,7 @@
 		6A4B8CE62631D56400301E2C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6A4B8CEB2631D72500301E2C /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		6A4B8CF02631DDDD00301E2C /* Extensiones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensiones.swift; sourceTree = "<group>"; };
+		6A4BF5682638913800A818C8 /* HumoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumoViewController.swift; sourceTree = "<group>"; };
 		6A501C7726366A1C00E46222 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		6A501C7D2636720800E46222 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		6A501C8726368D0400E46222 /* humedad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = humedad.jpg; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				C8EC211625DD828C000018FB /* SceneDelegate.swift */,
 				C8EC211825DD828C000018FB /* ViewController.swift */,
 				C8EC211A25DD828C000018FB /* Main.storyboard */,
+				6A4BF5682638913800A818C8 /* HumoViewController.swift */,
 				6A501C7726366A1C00E46222 /* ScannerViewController.swift */,
 				6A501C7D2636720800E46222 /* Device.swift */,
 				6A4B8CE62631D56400301E2C /* User.swift */,
@@ -429,6 +432,7 @@
 				84B90423260CF4B400E13550 /* LucesViewController.swift in Sources */,
 				84ACDB6D260CFA8F00ED5DF1 /* CocheraViewController.swift in Sources */,
 				C8EC211525DD828C000018FB /* AppDelegate.swift in Sources */,
+				6A4BF5692638913800A818C8 /* HumoViewController.swift in Sources */,
 				E85F74CC260A84BC009CDCE0 /* RegViewController.swift in Sources */,
 				E85F74B5260A77B1009CDCE0 /* SideMenu.swift in Sources */,
 				C8EC211725DD828C000018FB /* SceneDelegate.swift in Sources */,

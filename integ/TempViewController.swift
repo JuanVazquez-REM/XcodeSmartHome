@@ -13,21 +13,22 @@ import Starscream
 
 class TempViewController: UIViewController,WebSocketDelegate {
 
-    let defaults = UserDefaults.standard
     var socket: WebSocket!
-    var isConnected = false
+    var isConnected = true
     let server = WebSocketServer()
     override func viewDidLoad() {
-        var request = URLRequest(url: URL(string: "http://54.146.120.131:3333/data/device")!)
+        var request = URLRequest(url: URL(string: "ws://54.146.120.131:3333/adonis-ws")!)
         request.timeoutInterval = 5
         socket = WebSocket(request: request)
         socket.delegate = self
         socket.connect()
+        
                 }
     func didReceive(event: WebSocketEvent, client: WebSocket) {
         switch event {
         case .connected(let headers):
             isConnected = true
+            socket.write(string: "{\"t\":\(1),\"d\":{\"topic\":\"wstemp\"}}")
             print("websocket is connected: \(headers)")
         case .disconnected(let reason, let code):
             isConnected = false
@@ -62,12 +63,5 @@ class TempViewController: UIViewController,WebSocketDelegate {
             print("websocket en error")
         }
     }
-    @IBOutlet weak var DATA: UITableView!
-    @IBAction func btnGet(_ sender: Any) {
-        socket.connect()
-              
-            AF.request("http://54.146.120.131:3333/data/device", method: .post ).response { response in debugPrint(response)
-            }
-        }
-    }
+}
 
