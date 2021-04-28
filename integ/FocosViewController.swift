@@ -9,11 +9,17 @@
 import UIKit
 import Alamofire
 import Starscream
+
 class FocosViewController: UIViewController,WebSocketDelegate {
+   
+    
     
     var socket: WebSocket!
     var isConnected = true
     let server = WebSocketServer()
+    
+   
+  
     override func viewDidLoad() {
         var request = URLRequest(url: URL(string: "ws://54.146.120.131:3333/adonis-ws")!)
         request.timeoutInterval = 5
@@ -61,4 +67,6 @@ class FocosViewController: UIViewController,WebSocketDelegate {
             print("websocket en error")
         }
     }
+    
+
 }

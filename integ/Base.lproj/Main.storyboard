@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XLK-Tv-HhY">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,7 +12,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="integ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Splash" translatesAutoresizingMaskIntoConstraints="NO" id="3ma-TO-vsc">
@@ -22,8 +20,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.10634613037109375" green="0.20116043090820312" blue="0.47247314453125" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <segue destination="5RY-6n-Mt1" kind="presentation" identifier="splash" modalPresentationStyle="fullScreen" id="IYD-n3-kDp"/>
@@ -38,18 +36,18 @@
             <objects>
                 <viewController id="5RY-6n-Mt1" customClass="RegViewController" customModule="integ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KY1-FQ-sff">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QtL-6g-inj">
                                 <rect key="frame" x="25" y="326" width="340" height="333"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxI-eZ-RWJ" colorLabel="IBBuiltInLabel-Purple">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxI-eZ-RWJ" colorLabel="IBBuiltInLabel-Purple">
                                         <rect key="frame" x="100" y="200" width="150" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Inciar sesion">
-                                            <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                            <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         </state>
                                         <connections>
                                             <action selector="btn_login:" destination="5RY-6n-Mt1" eventType="touchUpInside" id="xbq-C4-dNc"/>
@@ -61,23 +59,23 @@
                                 <color key="backgroundColor" red="0.14504894614219666" green="0.26995983719825745" blue="0.57024514675140381" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingresar Usuario" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q8A-k6-eem">
-                                <rect key="frame" x="55" y="362.66666666666669" width="280" height="34"/>
+                                <rect key="frame" x="55" y="386" width="304" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingresar Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="09M-iR-6nL">
-                                <rect key="frame" x="55" y="447.33333333333331" width="280" height="34"/>
+                                <rect key="frame" x="55" y="476" width="304" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usuario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKV-DK-crC">
-                                <rect key="frame" x="68" y="327" width="59" height="21"/>
+                                <rect key="frame" x="74" y="348" width="59" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contraseña" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Laf-bG-PRv">
-                                <rect key="frame" x="53.666666666666657" y="411.66666666666669" width="88" height="21"/>
+                                <rect key="frame" x="59.5" y="437.5" width="88" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -87,7 +85,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="C6N-ag-i0T"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="MKV-DK-crC" firstAttribute="centerY" secondItem="KY1-FQ-sff" secondAttribute="centerY" multiplier="0.8" id="AVf-kp-Kx3"/>
@@ -103,6 +100,7 @@
                             <constraint firstItem="09M-iR-6nL" firstAttribute="centerY" secondItem="KY1-FQ-sff" secondAttribute="centerY" multiplier="1.1" id="neO-KB-Rfa"/>
                             <constraint firstItem="Laf-bG-PRv" firstAttribute="centerY" secondItem="KY1-FQ-sff" secondAttribute="centerY" id="nrX-kk-Cax"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="C6N-ag-i0T"/>
                     </view>
                     <navigationItem key="navigationItem" id="ccZ-cB-KzR"/>
                     <connections>
@@ -119,10 +117,10 @@
             <objects>
                 <viewController id="bdB-VV-MB3" customClass="HumoViewController" customModule="integ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KaE-sk-BkR">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="8UG-00-613"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Humo" id="p0W-Ub-7zz"/>
                 </viewController>
@@ -135,54 +133,100 @@
             <objects>
                 <viewController storyboardIdentifier="Focos" id="7Qd-8K-qbG" customClass="FocosViewController" customModule="integ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Apz-QS-9FW">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foco.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="vLc-VK-mdS">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="337.66666666666669"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bombilla" translatesAutoresizingMaskIntoConstraints="NO" id="KHV-py-ZO6">
+                                <rect key="frame" x="72" y="104" width="271" height="206"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="U12-vY-O7A">
+                                <rect key="frame" x="0.0" y="334" width="414" height="479"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="100" id="4pZ-gF-a4V" customClass="TableViewCell" customModule="integ" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4pZ-gF-a4V" id="lxo-ax-psb">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPN-yM-m48">
+                                                    <rect key="frame" x="20" y="11" width="210" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3z-AR-g2h">
+                                                    <rect key="frame" x="20" y="40" width="210" height="54"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HD0-qd-1Ym">
+                                                    <rect key="frame" x="344" y="35" width="50" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <state key="normal" title="Apagar">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRz-Xd-o8e">
+                                                    <rect key="frame" x="238" y="35" width="66" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="Encender">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="7Qd-8K-qbG" id="U2o-5M-zNX"/>
+                                    <outlet property="delegate" destination="7Qd-8K-qbG" id="oBW-ZJ-JLQ"/>
+                                </connections>
+                            </tableView>
                         </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="dIZ-T9-Ddz"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="vLc-VK-mdS" firstAttribute="width" secondItem="Apz-QS-9FW" secondAttribute="width" id="2DU-2A-o68"/>
-                            <constraint firstItem="vLc-VK-mdS" firstAttribute="centerX" secondItem="Apz-QS-9FW" secondAttribute="centerX" id="4jT-Xl-z6a"/>
-                            <constraint firstItem="vLc-VK-mdS" firstAttribute="height" secondItem="Apz-QS-9FW" secondAttribute="height" multiplier="0.4" id="PmC-bl-ylt"/>
-                            <constraint firstItem="vLc-VK-mdS" firstAttribute="centerY" secondItem="Apz-QS-9FW" secondAttribute="centerY" multiplier="0.4" id="q1j-4A-ZII"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Focos" id="gea-AD-Sz8"/>
                     <navigationItem key="navigationItem" id="0Yg-1K-0im"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lTp-Vl-ir1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1597" y="-228"/>
+            <point key="canvasLocation" x="1595.6521739130435" y="-228.34821428571428"/>
         </scene>
         <!--Cochera-->
         <scene sceneID="2lN-gm-v6v">
             <objects>
                 <viewController storyboardIdentifier="Cochera" id="cJ4-Aa-WNM" customClass="CocheraViewController" customModule="integ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OwH-7b-ygJ">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coche.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="lCa-Ic-4cc">
-                                <rect key="frame" x="0.0" y="84.333333333333314" width="390" height="675.33333333333348"/>
+                                <rect key="frame" x="0.0" y="89.5" width="414" height="717"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTr-dM-rIb">
-                                <rect key="frame" x="100" y="396" width="190" height="52"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTr-dM-rIb">
+                                <rect key="frame" x="100" y="422" width="214" height="52"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <state key="normal" title="Abrir">
-                                    <color key="titleColor" systemColor="systemBlueColor"/>
+                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="btnOpen:" destination="cJ4-Aa-WNM" eventType="touchUpInside" id="JK0-Qc-FS9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sU5-bn-YlB">
-                                <rect key="frame" x="100" y="480.33333333333331" width="190" height="51.999999999999943"/>
-                                <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sU5-bn-YlB">
+                                <rect key="frame" x="100" y="511.5" width="214" height="52"/>
+                                <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <state key="normal" title="Cerrar"/>
                                 <connections>
@@ -190,8 +234,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="fVe-iL-4ga"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="fVe-iL-4ga" firstAttribute="trailing" secondItem="aTr-dM-rIb" secondAttribute="trailing" constant="100" id="9Ek-b9-Isj"/>
                             <constraint firstItem="lCa-Ic-4cc" firstAttribute="centerX" secondItem="OwH-7b-ygJ" secondAttribute="centerX" id="Cvk-WK-kwf"/>
@@ -206,6 +249,7 @@
                             <constraint firstItem="aTr-dM-rIb" firstAttribute="leading" secondItem="fVe-iL-4ga" secondAttribute="leading" constant="100" id="xTY-6C-wia"/>
                             <constraint firstItem="aTr-dM-rIb" firstAttribute="centerX" secondItem="OwH-7b-ygJ" secondAttribute="centerX" id="zqh-hG-5vu"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="fVe-iL-4ga"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Cochera" id="dRl-TR-xGQ"/>
                     <navigationItem key="navigationItem" id="lRa-cb-6bz"/>
@@ -219,21 +263,21 @@
             <objects>
                 <viewController id="zbt-0I-iS6" customClass="HumedadViewController" customModule="integ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B2l-fy-zKn">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="humedad.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="lAR-kz-cMb">
-                                <rect key="frame" x="0.0" y="12.666666666666657" width="390" height="312"/>
+                                <rect key="frame" x="0.0" y="13.5" width="414" height="331.5"/>
                             </imageView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="oJf-1e-Zda"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="lAR-kz-cMb" firstAttribute="centerX" secondItem="B2l-fy-zKn" secondAttribute="centerX" id="1Dj-wm-Od1"/>
                             <constraint firstItem="lAR-kz-cMb" firstAttribute="centerY" secondItem="B2l-fy-zKn" secondAttribute="centerY" multiplier="0.4" id="SQX-dt-GR0"/>
                             <constraint firstItem="lAR-kz-cMb" firstAttribute="width" secondItem="B2l-fy-zKn" secondAttribute="width" id="TFW-Zi-TKh"/>
                             <constraint firstItem="lAR-kz-cMb" firstAttribute="height" secondItem="B2l-fy-zKn" secondAttribute="height" multiplier="0.369668" id="viH-dS-B40"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="oJf-1e-Zda"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Humedad" id="nw8-dI-FFg"/>
                 </viewController>
@@ -246,11 +290,11 @@
             <objects>
                 <viewController id="nKM-hF-4uo" customClass="TempViewController" customModule="integ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pBa-o1-PbO">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cieloo.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="KbC-nb-f92">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdg-IE-det">
                                 <rect key="frame" x="174" y="243" width="42" height="21"/>
@@ -260,14 +304,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="1fH-Au-FY8"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="KbC-nb-f92" firstAttribute="width" secondItem="pBa-o1-PbO" secondAttribute="width" id="PWl-V2-YW2"/>
                             <constraint firstItem="KbC-nb-f92" firstAttribute="centerY" secondItem="pBa-o1-PbO" secondAttribute="centerY" id="Yxx-zl-Yd7"/>
                             <constraint firstItem="KbC-nb-f92" firstAttribute="centerX" secondItem="pBa-o1-PbO" secondAttribute="centerX" id="alS-BF-7A9"/>
                             <constraint firstItem="KbC-nb-f92" firstAttribute="height" secondItem="pBa-o1-PbO" secondAttribute="height" id="kpI-uC-ks4"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="1fH-Au-FY8"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Temperatura" id="ITA-yI-LYv"/>
                     <connections>
@@ -278,15 +322,17 @@
             </objects>
             <point key="canvasLocation" x="1620" y="438.62559241706157"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--SideMenu-->
         <scene sceneID="nKv-6d-a2w">
             <objects>
-                <tabBarController id="Q6j-HM-jwb" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Mqb-fG-KdY"/>
+                <tabBarController title="SideMenu" id="Q6j-HM-jwb" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Menu" id="Mqb-fG-KdY"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="38A-I5-XtB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.9237290620803833" green="0.22049939632415771" blue="0.21421310305595398" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="nKM-hF-4uo" kind="relationship" relationship="viewControllers" id="oqb-Sl-H5X"/>
@@ -298,7 +344,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1jK-gX-Dks" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="826" y="139"/>
+            <point key="canvasLocation" x="775" y="172"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="c5f-KN-Lan">
@@ -307,7 +353,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="k19-bf-GJK"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AxS-vb-ZgB">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -322,19 +368,10 @@
     </scenes>
     <resources>
         <image name="Splash" width="2160" height="3840"/>
+        <image name="bombilla" width="480" height="480"/>
         <image name="cieloo.jpeg" width="337" height="600"/>
         <image name="coche.jpeg" width="1080" height="1920"/>
-        <image name="foco.jpeg" width="225" height="225"/>
         <image name="humedad.jpg" width="312" height="312"/>
         <image name="icono.png" width="800" height="600"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tertiarySystemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
