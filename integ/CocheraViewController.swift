@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import Starscream
+
 class CocheraViewController: UIViewController,WebSocketDelegate {
     
     var socket: WebSocket!
@@ -26,7 +27,6 @@ class CocheraViewController: UIViewController,WebSocketDelegate {
         case .connected(let headers):
             isConnected = true
             socket.write(string: "{\"t\":\(1),\"d\":{\"topic\":\"wscochera\"}}")
-            socket.write(string: "{\"t\":\(3),\"d\":{\"topic\":\"wscochera\"}}")
             print("websocket is connected: \(headers)")
         case .disconnected(let reason, let code):
             isConnected = false

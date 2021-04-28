@@ -252,6 +252,13 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cieloo.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="KbC-nb-f92">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdg-IE-det">
+                                <rect key="frame" x="174" y="243" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1fH-Au-FY8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -263,10 +270,13 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Temperatura" id="ITA-yI-LYv"/>
+                    <connections>
+                        <outlet property="temp" destination="bdg-IE-det" id="Mmp-bM-2YB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6up-3v-aO0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1620" y="439"/>
+            <point key="canvasLocation" x="1620" y="438.62559241706157"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="nKv-6d-a2w">

@@ -34,6 +34,12 @@ class TempViewController: UIViewController,WebSocketDelegate {
             isConnected = false
             print("websocket is disconnected: \(reason) with code: \(code)")
         case .text(let string):
+           // if topicws as! String == "temperatura"{
+           // if let dataT = dataArray["data"]{
+           // self.defaults.setValue(dataT, forKey: "temperatura")
+            //temp.text = (self.defaults.object(forKey: "temperatura") as! String)
+            //self.outTemperatura()}
+            //}
             print("Received text: \(string)")
         case .binary(let data):
             print("Received data: \(data.count)")
@@ -61,7 +67,7 @@ class TempViewController: UIViewController,WebSocketDelegate {
         }
         else{
             print("websocket en error")
+            }
         }
-    }
+    @IBOutlet weak var temp: UILabel!
 }
-
