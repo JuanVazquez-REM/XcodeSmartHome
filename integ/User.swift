@@ -17,8 +17,4 @@ struct User: Codable {
         self.correo = correo
         self.contra = contra
         }
-        
-        func updateToken(){
-            print("Actualizando token")
-        }
 }

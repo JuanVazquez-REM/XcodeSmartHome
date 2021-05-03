@@ -12,17 +12,21 @@ import Starscream
 
 class CocheraViewController: UIViewController,WebSocketDelegate {
     
+    @IBOutlet weak var abrir: UIButton!
+    @IBOutlet weak var cerrar: UIButton!
     var socket: WebSocket!
     var isConnected = true
     let server = WebSocketServer()
     override func viewDidLoad() {
+        abrir.round()
+        cerrar.round()
         var request = URLRequest(url: URL(string: "ws://54.146.120.131:3333/adonis-ws")!)
         request.timeoutInterval = 5
         socket = WebSocket(request: request)
         socket.delegate = self
         socket.connect()
                 }
-    func didReceive(event: WebSocketEvent, client: WebSocket) {
+   func didReceive(event: WebSocketEvent, client: WebSocket) {
         switch event {
         case .connected(let headers):
             isConnected = true
@@ -61,4 +65,24 @@ class CocheraViewController: UIViewController,WebSocketDelegate {
             print("websocket en error")
         }
     }
+    @IBAction func btnOpen(_ sender: Any) {
+        let actionSheetControllerIOS8: UIAlertController = UIAlertController(title: "Abrir", message: nil, preferredStyle: .actionSheet)
+        let FourActionButton = UIAlertAction(title: "Abriendo", style: .default)
+                    { _ in
+                    self.socket.write(string: "{\"t\":\(7),\"d\": {\"topic\": \"wscochera\", \"event\": \"message\",\"data\": \(1) }}")
+                    
+                }
+                actionSheetControllerIOS8.addAction(FourActionButton)
+                    self.present(actionSheetControllerIOS8, animated: true, completion: nil)
+            }
+    @IBAction func btnClose(_ sender: Any) {
+        let actionSheetControllerIOS8: UIAlertController = UIAlertController(title: "Cerrar", message: nil, preferredStyle: .actionSheet)
+        let FourActionButton = UIAlertAction(title: "Cerrando", style: .default)
+                    { _ in
+                    self.socket.write(string: "{\"t\":\(7),\"d\": {\"topic\": \"wscochera\", \"event\": \"message\",\"data\": \(1) }}")
+                    
+                }
+                actionSheetControllerIOS8.addAction(FourActionButton)
+                    self.present(actionSheetControllerIOS8, animated: true, completion: nil)
+            }
 }

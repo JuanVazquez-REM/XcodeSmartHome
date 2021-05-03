@@ -7,50 +7,61 @@
 //
 
 import UIKit
-
+import Alamofire
 class NewUserController: UIViewController, UITextFieldDelegate {
 
-
-    @IBOutlet weak var nameTextField: UITextField!
-    
-    @IBOutlet weak var apeidoTextField: UITextField!
-    
-    @IBOutlet weak var correoTextField: UITextField!
-    
-    @IBOutlet weak var passwordTextField: UITextField!
-    
+    @IBOutlet weak var session: UIButton!
+    @IBOutlet weak var nombre: UILabel!
+    @IBOutlet weak var apellido: UILabel!
+    @IBOutlet weak var correo: UILabel!
+    @IBOutlet weak var password: UILabel!
     
     let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-    
-
     @IBAction func registro(_ sender: Any) {
-        let userTxt = nameTextField.text!
-        if (userTxt.count > 0 && correoTextField.text?.count ?? 0 > 0 && passwordTextField.text?.count ?? 0 > 0){
-                let user = User(userTxt, correo:correoTextField.text!, passwordTextField.text!)
-                let usuarios:[User] = [user]
+           let headers: HTTPHeaders = [
+                    "Accept":"application/json"
+                ]
                 
-                do{
-                    let jsonEncoder = JSONEncoder()
-                    let data = try jsonEncoder.encode(usuarios)
-                    
-                    defaults.set(data,forKey: "usuarios")
-                    defaults.synchronize()
-                    print("usuario registrado")
-                    
-                }catch{
-                    print("Error")
-                }
-                     }else{
-                    alertDefault(with: "Error", andWithMsg: "Campos vacios")
-                    nameTextField.shake()
-                    passwordTextField.shake()
-                    correoTextField.shake()
-                    passwordTextField.shake()
-                }
-            }
-        }
+                    if  nombre.text != "" && apellido.text != ""{
+                        if correo.text != "" && password.text != "" {
+                            let params = ["nombre": nombre.text!, "apellido": apellido.text!,"password": password.text!, "email": correo.text!]
+                            //print(params)
+                            guard let nombre = nombre.text else {return}
+                            guard let apellido = apellido.text else {return}
+                            guard let password = password.text else {return}
+                            guard let email = correo.text else {return}
+                            self.defaults.setValue(nombre, forKey: "nombre")
+                            self.defaults.setValue(apellido, forKey: "apellido")
+                            self.defaults.setValue(password, forKey: "password")
+                            self.defaults.setValue(email, forKey: "email")
+                           AF.request("http://54.146.120.131:3331/register", method: .post, parameters: params, headers: headers).responseJSON() { [self] response in
+                               print(response)
+                               switch response.result {
+                                case .success(let value):
+                                   guard let jsonArray = value as? [String:Any] else {return}
+                                   guard let token = jsonArray["token"] as? String else {return}
+                                   self.defaults.set(token, forKey: "token")
+                               case .failure(_):
+                                print("Algo salio mal")
+                               }
+                            }
+                        }else{
+                            let ac = UIAlertController(title: "Error", message: "Los campos estan incompletos", preferredStyle: .alert)
+                            ac.addAction(UIAlertAction(title: "Ok", style: .default))
+                            self.present(ac, animated: true, completion: nil)
+                            
+                            }
+                        }
+                    else {
+                        nombre.shake()
+                        apellido.shake()
+                        correo.shake()
+                        password.shake()
+                        alertDefault(with: "Error", andWithMsg: "campos vacios")
+                    }
+                        }
+                    }

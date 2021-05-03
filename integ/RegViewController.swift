@@ -8,10 +8,11 @@
 
 import UIKit
 import Alamofire
-import Starscream
 
 class RegViewController: UIViewController {
 
+
+    @IBOutlet weak var sesion: UIButton!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -21,35 +22,44 @@ class RegViewController: UIViewController {
         super.viewDidLoad()
 
                 }
-    @IBAction func segue(_ sender: Any) {
-        performSegue(withIdentifier: "sg", sender: nil)
-    }
     @IBAction func btn_reg(_ sender: Any) {
-        performSegue(withIdentifier: "reg", sender: nil)
+        performSegue(withIdentifier: "reg1", sender: nil)
     }
     @IBAction func btn_login(_ sender: Any) {
-        let userTxt = usernameTextField.text!
-        if usernameTextField.text!.isEmpty || passwordTextField.text!.isEmpty{
-            alertDefault(with: "Error", andWithMsg: "Campos vacios")
-            usernameTextField.shake()
-            passwordTextField.shake()
-            }
-            else{
-                self.performSegue(withIdentifier: "sg", sender: nil)
-                let usuario = User(userTxt,correo: usernameTextField.text!,passwordTextField.text!)
-                let usuarios:[User] = [usuario]
-                do
-                {
-                    let jsonEncoder = JSONEncoder()
-                    let data = try jsonEncoder.encode(usuarios)
-                    defaults.set(data,forKey: "usuarios")
-                    defaults.synchronize()
-                    print("usuario logueado")
-                }catch{
-                    print("Error")
-                }
-    AF.request("http://54.146.120.131:3333/login", method: .post, parameters: ["email":usuario.correo,"password":usuario.contra]).response { response in debugPrint(response)
-            }
-        }
-    }
-}
+        let headers: HTTPHeaders = [
+                 "Accept":"application/json"
+             ]
+             
+                 if  usernameTextField.text != "" && passwordTextField.text != ""{
+                     let params = ["password": passwordTextField.text!, "email": usernameTextField.text!]
+                     //print(params)
+                     guard let password = passwordTextField.text else {return}
+                     guard let email = usernameTextField.text else {return}
+                     self.defaults.setValue(password, forKey: "password")
+                     self.defaults.setValue(email, forKey: "email")
+                    AF.request("http://54.146.120.131:3331/login", method: .post, parameters: params, headers: headers).responseJSON() { [self] response in
+                        print(response)
+                        switch response.result {
+                         case .success(let value):
+                            guard let jsonArray = value as? [String:Any] else {return}
+                            guard let token = jsonArray["token"] as? String else { return}
+                            self.defaults.set(token, forKey: "token")
+                             if self.defaults.string(forKey: "token") != nil{
+                                 sesion.sendActions(for: .touchUpInside)
+                                self.performSegue(withIdentifier: "sg", sender: nil)
+                              }
+                             let ac = UIAlertController(title: "Error", message: "Contraseña o usuario erroneo", preferredStyle: .alert)
+                             ac.addAction(UIAlertAction(title: "Cerrar", style: .default))
+                             self.present(ac, animated: true, completion: nil)
+                           case .failure(let error):
+                             print(error)
+                          }
+                     }
+                 }else{
+                     let ac = UIAlertController(title: "Error", message: "Los campos estan incompletos", preferredStyle: .alert)
+                     ac.addAction(UIAlertAction(title: "Ok", style: .default))
+                     self.present(ac, animated: true, completion: nil)
+                     
+                     }
+                 }
+             }

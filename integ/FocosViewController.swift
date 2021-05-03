@@ -13,13 +13,10 @@ import Starscream
 class FocosViewController: UIViewController,WebSocketDelegate {
    
     
-    
     var socket: WebSocket!
     var isConnected = true
     let server = WebSocketServer()
-    
    
-  
     override func viewDidLoad() {
         var request = URLRequest(url: URL(string: "ws://54.146.120.131:3333/adonis-ws")!)
         request.timeoutInterval = 5
@@ -32,7 +29,6 @@ class FocosViewController: UIViewController,WebSocketDelegate {
         case .connected(let headers):
             isConnected = true
             socket.write(string: "{\"t\":\(1),\"d\":{\"topic\":\"wsfoco\"}}")
-            socket.write(string: "{\"t\":\(3),\"d\":{\"topic\":\"wsfoco\"}}")
             print("websocket is connected: \(headers)")
         case .disconnected(let reason, let code):
             isConnected = false
@@ -67,6 +63,4 @@ class FocosViewController: UIViewController,WebSocketDelegate {
             print("websocket en error")
         }
     }
-    
-
 }

@@ -13,33 +13,82 @@ import Starscream
 
 class TempViewController: UIViewController,WebSocketDelegate {
 
+
     var socket: WebSocket!
     var isConnected = true
     let server = WebSocketServer()
+    private var pingTimer:Timer?
     override func viewDidLoad() {
+
         var request = URLRequest(url: URL(string: "ws://54.146.120.131:3333/adonis-ws")!)
         request.timeoutInterval = 5
         socket = WebSocket(request: request)
         socket.delegate = self
         socket.connect()
-        
-                }
+    }
     func didReceive(event: WebSocketEvent, client: WebSocket) {
         switch event {
         case .connected(let headers):
             isConnected = true
-            socket.write(string: "{\"t\":\(1),\"d\":{\"topic\":\"wstemp\"}}")
+            //socket.write(string: "{\"t\":\(1),\"d\":{\"topic\":\"wstemp\"}}")
             print("websocket is connected: \(headers)")
+            self.pingTimer = Timer.scheduledTimer(timeInterval: 40, target: self, selector: #selector(ping), userInfo: nil, repeats: true)
+            self.pingTimer?.fire()
         case .disconnected(let reason, let code):
             isConnected = false
             print("websocket is disconnected: \(reason) with code: \(code)")
         case .text(let string):
-           // if topicws as! String == "temperatura"{
-           // if let dataT = dataArray["data"]{
-           // self.defaults.setValue(dataT, forKey: "temperatura")
-            //temp.text = (self.defaults.object(forKey: "temperatura") as! String)
-            //self.outTemperatura()}
-            //}
+            print("datos ->", string)
+            guard let jsonData = string.data(using: .utf8, allowLossyConversion: false) else {
+                                print("Fail Convert To Data")
+                                return
+                            }
+                            do {
+                           print("entro 1")
+                                if let jsonArray = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any] {
+                                    if let dObject = jsonArray["d"] {
+                                        print("entro 2")
+                                        do {
+                                            let dataObject = try JSONSerialization.data(withJSONObject: dObject, options: .fragmentsAllowed)
+                                            do {
+                                                print("entro 3")
+                                                if let dataArray = try JSONSerialization.jsonObject(with: dataObject, options: []) as? [String:Any] {
+                                                    if let topicws = dataArray["topic"]{
+                                                        print(topicws)
+                                                        if topicws as! String == "wstemp"{
+                                                            print("entro al topic")
+                                                            if let datatemp = dataArray["data"]{
+                                                               print(datatemp)
+                                                                temp.text! = datatemp as! String
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }else {
+                                    print("Fail To Serialization")
+                                }
+                                } catch let error as NSError {
+                                    print(error)
+                                }
+                            
+            //if let data = string.data(using: .utf8) {
+              //  guard let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String : Any] else { return }
+//                print(json)
+  //              if json["t"] as! Int == 7{
+    //                let datos:NSDictionary = json["d"] as! NSDictionary
+      //              if datos["topic"] as! String == "wstemp"{
+        //                let datos2:NSDictionary = datos["dato"] as! NSDictionary
+          //              _ = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+
+            //            temp.text = "\(datos2["dato"]!)"+"ºC"
+              //          self.outTemp()
+                //    }
+                //}
+                
+           // }
             print("Received text: \(string)")
         case .binary(let data):
             print("Received data: \(data.count)")
@@ -58,6 +107,36 @@ class TempViewController: UIViewController,WebSocketDelegate {
             handleError(error)
         }
     }
+    @objc func ping() {
+        self.getTemp()
+    }
+    
+    func getTemp() {
+            let packet = ["t":1,"d":["topic":"wstemp"]] as [String : Any]
+               do {
+                   let data = try JSONSerialization.data(withJSONObject: packet, options: .fragmentsAllowed)
+                   socket.write(data: data)
+                   print("packetSend->",packet)
+               }catch {
+                   print("Error de serializacion")
+               }
+    }
+    
+    func outTemp() {
+            let packet = ["t":2,"d":["topic":"wstemp"]] as [String : Any]
+               do {
+                   let data = try JSONSerialization.data(withJSONObject: packet, options: .fragmentsAllowed)
+                   socket.write(data: data)
+                   print("packetSend->",packet)
+               }catch {
+                   print("Error de serializacion")
+               }
+        }
+    
+    func sendData(){
+        self.getTemp()
+    }
+    
     func handleError(_ error: Error?) {
         if let e = error as? WSError{
             print("websocket en error : \(e.message)")
