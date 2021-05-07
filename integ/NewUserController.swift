@@ -16,6 +16,16 @@ class NewUserController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var correo: UILabel!
     @IBOutlet weak var password: UILabel!
     
+    @IBOutlet weak var name: UITextField!
+    
+    @IBOutlet weak var lastname: UITextField!
+    
+    @IBOutlet weak var email: UITextField!
+    
+    @IBOutlet weak var pass: UITextField!
+    
+    
+    
     let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
@@ -25,43 +35,42 @@ class NewUserController: UIViewController, UITextFieldDelegate {
            let headers: HTTPHeaders = [
                     "Accept":"application/json"
                 ]
-                
-                    if  nombre.text != "" && apellido.text != ""{
-                        if correo.text != "" && password.text != "" {
-                            let params = ["nombre": nombre.text!, "apellido": apellido.text!,"password": password.text!, "email": correo.text!]
-                            //print(params)
-                            guard let nombre = nombre.text else {return}
-                            guard let apellido = apellido.text else {return}
-                            guard let password = password.text else {return}
-                            guard let email = correo.text else {return}
-                            self.defaults.setValue(nombre, forKey: "nombre")
-                            self.defaults.setValue(apellido, forKey: "apellido")
-                            self.defaults.setValue(password, forKey: "password")
-                            self.defaults.setValue(email, forKey: "email")
-                           AF.request("http://54.146.120.131:3331/register", method: .post, parameters: params, headers: headers).responseJSON() { [self] response in
-                               print(response)
-                               switch response.result {
-                                case .success(let value):
-                                   guard let jsonArray = value as? [String:Any] else {return}
-                                   guard let token = jsonArray["token"] as? String else {return}
-                                   self.defaults.set(token, forKey: "token")
-                               case .failure(_):
-                                print("Algo salio mal")
-                               }
-                            }
-                        }else{
-                            let ac = UIAlertController(title: "Error", message: "Los campos estan incompletos", preferredStyle: .alert)
-                            ac.addAction(UIAlertAction(title: "Ok", style: .default))
-                            self.present(ac, animated: true, completion: nil)
-                            
-                            }
-                        }
-                    else {
-                        nombre.shake()
-                        apellido.shake()
-                        correo.shake()
-                        password.shake()
-                        alertDefault(with: "Error", andWithMsg: "campos vacios")
-                    }
-                        }
-                    }
+        if name.text!.count > 0 && lastname.text!.count > 0 && email.text!.count > 0 && pass.text!.count > 0{
+            let params = ["nombre": name.text!, "apellido": lastname.text!,"password": pass.text!, "email": email.text!]
+            //print(params)
+            guard let nombre = name.text else {return}
+            guard let apellido = lastname.text else {return}
+            guard let password = pass.text else {return}
+            guard let correo = email.text else {return}
+            self.defaults.setValue(nombre, forKey: "nombre")
+            self.defaults.setValue(apellido, forKey: "apellido")
+            self.defaults.setValue(password, forKey: "password")
+            self.defaults.setValue(correo, forKey: "email")
+           AF.request("http://54.146.120.131:3331/register", method: .post, parameters: params, headers: headers).responseJSON() {response in
+               print(response)
+               switch response.result {
+               case .success:
+                self.performSegue(withIdentifier: "reg2", sender: nil)
+                break
+                    
+               case .failure(_):
+                print("Algo salio mal")
+               }
+            }
+        }
+        else {
+            name.shake()
+            lastname.shake()
+            email.shake()
+            pass.shake()
+            alertDefault(with: "Error", andWithMsg: "campos vacios")
+            let ac = UIAlertController(title: "Error", message: "Los campos estan incompletos", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Ok", style: .default))
+            self.present(ac, animated: true, completion: nil)
+            
+        }
+    }
+    @IBAction func btn_can(_ sender: Any) {
+        performSegue(withIdentifier: "reg3", sender: nil)
+    }
+}

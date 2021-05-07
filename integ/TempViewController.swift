@@ -19,7 +19,7 @@ class TempViewController: UIViewController,WebSocketDelegate {
     let server = WebSocketServer()
     private var pingTimer:Timer?
     override func viewDidLoad() {
-
+        
         var request = URLRequest(url: URL(string: "ws://54.146.120.131:3333/adonis-ws")!)
         request.timeoutInterval = 5
         socket = WebSocket(request: request)
@@ -73,22 +73,6 @@ class TempViewController: UIViewController,WebSocketDelegate {
                                 } catch let error as NSError {
                                     print(error)
                                 }
-                            
-            //if let data = string.data(using: .utf8) {
-              //  guard let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String : Any] else { return }
-//                print(json)
-  //              if json["t"] as! Int == 7{
-    //                let datos:NSDictionary = json["d"] as! NSDictionary
-      //              if datos["topic"] as! String == "wstemp"{
-        //                let datos2:NSDictionary = datos["dato"] as! NSDictionary
-          //              _ = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
-
-            //            temp.text = "\(datos2["dato"]!)"+"ºC"
-              //          self.outTemp()
-                //    }
-                //}
-                
-           // }
             print("Received text: \(string)")
         case .binary(let data):
             print("Received data: \(data.count)")

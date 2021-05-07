@@ -16,6 +16,9 @@ class RegViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var user: UITextField!
+    @IBOutlet weak var pass: UITextField!
+    
     let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
@@ -30,11 +33,11 @@ class RegViewController: UIViewController {
                  "Accept":"application/json"
              ]
              
-                 if  usernameTextField.text != "" && passwordTextField.text != ""{
-                     let params = ["password": passwordTextField.text!, "email": usernameTextField.text!]
+                 if  user.text != "" && pass.text != ""{
+                     let params = ["password": pass.text!, "email": user.text!]
                      //print(params)
-                     guard let password = passwordTextField.text else {return}
-                     guard let email = usernameTextField.text else {return}
+                     guard let password = pass.text else {return}
+                     guard let email = user.text else {return}
                      self.defaults.setValue(password, forKey: "password")
                      self.defaults.setValue(email, forKey: "email")
                     AF.request("http://54.146.120.131:3331/login", method: .post, parameters: params, headers: headers).responseJSON() { [self] response in
@@ -42,12 +45,18 @@ class RegViewController: UIViewController {
                         switch response.result {
                          case .success(let value):
                             guard let jsonArray = value as? [String:Any] else {return}
-                            guard let token = jsonArray["token"] as? String else { return}
-                            self.defaults.set(token, forKey: "token")
-                             if self.defaults.string(forKey: "token") != nil{
-                                 sesion.sendActions(for: .touchUpInside)
-                                self.performSegue(withIdentifier: "sg", sender: nil)
-                              }
+                            if user.text != "" && pass.text != "" {
+                                let token = jsonArray["token"] as? String
+                                self.defaults.set(token, forKey: "token")
+                                if (jsonArray["token"] != nil) {
+                                    self.performSegue(withIdentifier: "sg", sender: nil)
+                                }
+                            }
+                            else {return}
+                            // if self.defaults.string(forKey: "token") != nil{
+                              //   sesion.sendActions(for: .touchUpInside)
+                                //self.performSegue(withIdentifier: "sg", sender: nil)
+                              //}
                              let ac = UIAlertController(title: "Error", message: "Contraseña o usuario erroneo", preferredStyle: .alert)
                              ac.addAction(UIAlertAction(title: "Cerrar", style: .default))
                              self.present(ac, animated: true, completion: nil)
